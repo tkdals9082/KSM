@@ -1,0 +1,64 @@
+### Unity folders & files ###
+[Ll]ibrary/
+!**/[Aa]ssets/**/[Ll]ibrary
+
+[Tt]emp/
+!**/[Aa]ssets/**/[Tt]emp
+
+[Oo]bj/
+!**/[Aa]ssets/**/[Oo]bj
+
+[Ll]ogs/
+!**/[Aa]ssets/**/[Ll]ogs
+
+[Mm]emoryCaptures/
+!**/[Aa]ssets/**/[Mm]emoryCaptures/
+
+UnityGenerated/
+**/[Aa]ssets/AssetStoreTools*
+**/[Aa]ssets/StreamingAssets/crashlytics-build.properties
+
+sysinfo.txt
+crashlytics-build.properties
+
+# *.unitypackage
+
+!**/[Aa]ssets/**/*.meta
+
+# Builds #
+[Bb]uild/
+[Bb]uilds/
+*.apk
+
+### Visual Studio / MonoDevelop generated ###
+.gradle/
+.vs/
+**/ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.pidb.meta
+*.booproj
+*.svd
+*.pdb
+*.pdb.meta
+*.mdb
+*.mdb.meta
+*.opendb
+*.VC.db
+
+### OS ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
