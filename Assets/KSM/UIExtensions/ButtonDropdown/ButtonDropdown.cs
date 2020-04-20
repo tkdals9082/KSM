@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System;
+using UnityEngine.EventSystems;
 
 namespace KSM.UI
 {
@@ -72,6 +73,14 @@ namespace KSM.UI
         private List<UnityAction> onClickActions = new List<UnityAction>();
 
         public UnityEvent OnDropdownListInitialized = new UnityEvent();
+        public UnityEvent OnClickDropdown = new UnityEvent();
+
+        public override void OnPointerClick(PointerEventData eventData)
+        {
+            OnClickDropdown?.Invoke();
+
+            base.OnPointerClick(eventData);
+        }
 
         protected override void DestroyDropdownList(GameObject dropdownList)
         {
