@@ -69,8 +69,9 @@ namespace KSM.UI
         #endregion
 
         public List<Button> buttons = new List<Button>();
+        private List<UnityAction> onClickActions = new List<UnityAction>();
 
-        public UnityEvent OnFinishCreateList = new UnityEvent();
+        public UnityEvent OnDropdownListInitialized = new UnityEvent();
 
         protected override void DestroyDropdownList(GameObject dropdownList)
         {
@@ -88,9 +89,45 @@ namespace KSM.UI
 
         protected override GameObject CreateBlocker(Canvas rootCanvas)
         {
-            // Blocker is instantiated after the list.
-            OnFinishCreateList?.Invoke();
+            // Create blocker is called after instantiate items.
+            int cntButton = buttons.Count;
+            int cntAction = onClickActions.Count;
+
+            for(int i = 0; i < cntButton && i < cntAction; ++i)
+            {
+                buttons[i].onClick.AddListener(onClickActions[i]);
+            }
+
+            OnDropdownListInitialized?.Invoke();
+
             return base.CreateBlocker(rootCanvas);
+        }
+
+        public void AddOptions(List<(OptionData, UnityAction)> options)
+        {
+            base.AddOptions(options.ConvertAll(option => option.Item1));
+
+            onClickActions = options.ConvertAll(option => option.Item2);
+        }
+
+        public void AddOptions(List<(string, UnityAction)> options)
+        {
+            base.AddOptions(options.ConvertAll(option => option.Item1));
+
+            onClickActions = options.ConvertAll(option => option.Item2);
+        }
+
+        public void AddOptions(List<(Sprite, UnityAction)> options)
+        {
+            base.AddOptions(options.ConvertAll(option => option.Item1));
+
+            onClickActions = options.ConvertAll(option => option.Item2);
+        }
+        
+        public new void ClearOptions()
+        {
+            base.ClearOptions();
+            onClickActions.Clear();
         }
     }
 }

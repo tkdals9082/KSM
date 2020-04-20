@@ -208,9 +208,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   buttons: []
-  OnFinishCreateList:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &22527390
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,31 +1,36 @@
 ﻿namespace KSM.UI.Example
 {
+    using System.Collections.Generic;
     using UnityEngine;
+    using UnityEngine.Events;
     using UnityEngine.UI;
 
     public class Listener : MonoBehaviour
     {
         public ButtonDropdown buttonDropdown;
 
-        private void OnEnable()
+        List<string> initials = new List<string>() { "K", "S", "M" };
+
+        private void Start()
         {
-            buttonDropdown.OnFinishCreateList.AddListener(AddListenerForButtons);
+            AddOptionsButtonDropdown();
         }
-        
-        private void AddListenerForButtons()
+
+        private void AddOptionsButtonDropdown()
         {
-            int cnt = buttonDropdown.options.Count;
+            buttonDropdown.ClearOptions();
+
+            List<(string, UnityAction)> options = new List<(string, UnityAction)>();
+
+            int cnt = initials.Count;
 
             for(int i = 0; i < cnt; ++i)
             {
                 int j = i;
-                buttonDropdown.buttons[i].onClick.AddListener(() => Debug.Log("Button " + j + " is clicked!"));
+                options.Add((initials[i], () => Debug.Log("my " + j + "th initial is " + initials[j])));
             }
-        }
 
-        private void OnDisable()
-        {
-            buttonDropdown.OnFinishCreateList.RemoveListener(AddListenerForButtons);
+            buttonDropdown.AddOptions(options);
         }
     }
 }
