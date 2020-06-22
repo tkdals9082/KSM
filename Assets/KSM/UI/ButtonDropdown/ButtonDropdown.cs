@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using System;
 using UnityEngine.EventSystems;
+using KSM.Utility;
 
 namespace KSM.UI
 {
@@ -13,13 +14,17 @@ namespace KSM.UI
     {
         #region Editor
 #if UNITY_EDITOR
-        [MenuItem("GameObject/UI/Extensions/Dropdown - Button")]
+        [MenuItem("GameObject/UI/KSM/Dropdown - Button")]
         static void CreateButtonDropdown()
         {
+            Transform activeTransform = Selection.activeTransform;
+
             EditorApplication.ExecuteMenuItem("GameObject/UI/Dropdown");
 
             GameObject dropdownObj = Selection.activeGameObject;
-            dropdownObj.name = "ButtonDropdown"; // TODO : implement naming function for duplicated obj.
+            dropdownObj.transform.SetParent(activeTransform == null ? dropdownObj.transform.root : activeTransform, false);
+            //dropdownObj.name = "ButtonDropdown"; // TODO : implement naming function for duplicated obj.
+            dropdownObj.SetUniqueName("ButtonDropdown");
 
             DestroyImmediate(dropdownObj.GetComponent<Dropdown>());
 

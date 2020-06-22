@@ -23,7 +23,7 @@ Open Packages/manifest.json file in your project folder and put this line along 
 <pre>"com.mybox": "https://github.com/Deadcows/MyBox.git"</pre>
 Note how the comma lies at the end of every line in dependencies, except of the last line!
 
-To update, use Tools->MyBox->Update window<br />
+To update, use Tools->MyBox->MyBox Window<br />
 MyBox will notify on new versions 🤗 <br /><br />
 
 ❕If you got problems with update process simply remove "lock" section at the end of your Packages/manifest.json file.
@@ -41,12 +41,14 @@ Tons of images below :point_down:
 **[AutoProperty](https://github.com/Deadcows/MyBox/wiki/Attributes#autoproperty)** — Assign fields automatically<br />
 **[ButtonMethod](https://github.com/Deadcows/MyBox/wiki/Attributes#buttonmethod)** — Display button in inspector<br />
 **[ConditionalField](https://github.com/Deadcows/MyBox/wiki/Attributes#conditionalfield)** — Conditionally display property in inspector, based on some other property value<br />
+**[ConstantsSelection](https://github.com/Deadcows/MyBox/wiki/Attributes#constantsselection)** — Popup of const, readonly or static fields and properties<br />
 **[DefinedValues](https://github.com/Deadcows/MyBox/wiki/Attributes#definedvalues)** — Display Dropdown with predefined values<br />
 **[DisplayInspector](https://github.com/Deadcows/MyBox/wiki/Attributes#displayinspector)** — Display one inspector inside of another<br />
 **[Foldout](https://github.com/Deadcows/MyBox/wiki/Attributes#foldout)** — Group your fields in inspector<br />
+**[InitializeField](https://github.com/Deadcows/MyBox/wiki/Attributes#initializefield)** — Field that is not editable in playmode<br />
 **[Tag, Layer, SpriteLayer](https://github.com/Deadcows/MyBox/wiki/Attributes#tag-layer-spritelayer)** — Dropdown with Tags, Layers or SpriteLayers<br />
 **[MinMaxRange, RangedFloat and RangedInt](https://github.com/Deadcows/MyBox/wiki/Attributes#minmaxrange-rangedfloat-and-rangedint)** — Ranged sliders<br />
-**[MustBeAssigned](https://github.com/Deadcows/MyBox/wiki/Attributes#mustbeassigned)** — Automatically checks if field is assigned (not null / not empty / not default value) on Playmode<br />
+**[MustBeAssigned](https://github.com/Deadcows/MyBox/wiki/Attributes#mustbeassigned)** — Automatically checks if field is assigned<br />
 **[PositiveValueOnly](https://github.com/Deadcows/MyBox/wiki/Attributes#positivevalueonly)** — Prohibit values below zero<br />
 **[ReadOnly](https://github.com/Deadcows/MyBox/wiki/Attributes#readonly)** — Draw property with disabled GUI<br />
 **[RequireTag and RequireLayer](https://github.com/Deadcows/MyBox/wiki/Attributes#requiretag-and-requirelayer)** — Automatically set Tag and Layer<br />
@@ -74,6 +76,7 @@ Tons of images below :point_down:
 **[Billboard Component](https://github.com/Deadcows/MyBox/wiki/Types#billboard-component)** — Force object to always face camera<br />
 **[ColliderGizmo Component](https://github.com/Deadcows/MyBox/wiki/Types#collidergizmo-component)** — Highlight colliders and triggers in SceneView<br />
 **[FPSCounter Component](https://github.com/Deadcows/MyBox/wiki/Types#fpscounter)** — Display FPS counter on Playmode<br />
+**[MyCursor](https://github.com/Deadcows/MyBox/wiki/Types#mycursor)** — Nice way to set cursor with hotspot<br />
 **[MyDictionary](https://github.com/Deadcows/MyBox/wiki/Types#mydictionary)** — Serializable Dictionary<br />
 **[MinMaxInt and MinMaxFloat](https://github.com/Deadcows/MyBox/wiki/Types#minmaxint-and-minmaxfloat)** — Asserts that Max => Min with handy inspector drawer<br />
 **[Optional and OptionalMinMax](https://github.com/Deadcows/MyBox/wiki/Types#optional-and-optionalminmax)** — Optionally assignable values<br />

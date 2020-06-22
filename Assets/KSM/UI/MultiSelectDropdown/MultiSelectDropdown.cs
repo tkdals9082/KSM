@@ -50,10 +50,6 @@
                 Debug.LogError(nameof(MultiSelectDropdown) + " need Dropdown component in the same GameObject!");
                 DestroyImmediate(this);
             }
-            
-            captionText = dropdown.captionText;
-
-            dropdown.captionText = null;
         }
 #endif
 

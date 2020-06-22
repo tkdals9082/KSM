@@ -1,9 +1,36 @@
 # Changelog
 All notable changes to this package will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-
 ## [Unreleased]
+! wip AttributeBase
+
+## [1.4.0] - 2020-05-18
+- Added: ConstantsSelectionAttribute to popup all const values of a specific type
+- Added: CollectionWrapper to use ConditionalField on collections
+- Added: InitializationFieldAttribute to make field read-only in Playmode
+- Added: MyCursor type to with handy hotspot assignment
+- Added: MyCoroutines.CoroutineGroup with handy StartAll() and AnyProcessing
+- Added: MyDebug.LogColor(Color) because why not
+- Changed: ConditionalField now correctly uses CustomDrawer if drawer affects base type of target field 
+- Changed: DisplayInspectorAttribute now supports ButtonMethodAttribute inside of displayed types
+- Changed: RequiredLayerAttribute might accept layer index instead of the name
+- Changed: AnimationStateReference now might reference any object on scene
+- Changed: ColliderGizmo now works with MeshColliders
+- Extension: MinMax.RandomInRange
+- Extension: Transform.StartShake now have "fade" parameter
+- Extension: Coroutine.StartNext(IEnumerator) to easily create sequence of coroutines 
+- Extension: SerializedProperty.IsNumerical to detect vectors or float/int
+- Extension: SerializedProperty.GetValue/SetValue to operate with object reference
+- Fix: Reorderable Collections drawing issue
+- Fix: ColliderGizmo compilation problem in Unity2020.1
+- Fix: CleanEmptyDirectories didn't allow to create folders
+- Fix: CleanEmptyDirectories NullReferenceException fix
+- Fix: AutoProperty rare NullReferenceException fix
+- Fix: ConditionalField multiple fixes
+- Fix: PositiveValeOnlyAttribute label drawing properly
+- Fix: GameObject.HasComponent extension redundant constraint removed
+- Fix: UnityObjectEditor rare NullReferenceException fix
+- Fix: Billboard component
 
 ## [1.3.0] - 2020-01-16
 - Added: FoldoutAttribute. Thanks to PixeyeHQ!

@@ -1,19 +1,20 @@
 ﻿using UnityEngine;
 
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
-
 namespace MyBox
 {
 	public class ReadOnlyAttribute : PropertyAttribute
 	{
+		public ReadOnlyAttribute()
+		{
+		}
 	}
 }
 
 #if UNITY_EDITOR
 namespace MyBox.Internal
 {
+	using UnityEditor;
+	
 	[CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
 	public class ReadOnlyAttributeDrawer : PropertyDrawer
 	{
